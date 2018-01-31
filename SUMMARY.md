@@ -11,3 +11,4 @@
 	* [指令的设计](vue/2.directive.md)
 	* [组件上的v-model](vue/3.v-model-component.md)
 	* [用eventBus传递数据](vue/4.eventBus.md)
+	* [二次开发iview](vue/6.iview-component.md)
