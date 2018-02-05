@@ -12,3 +12,5 @@
 	* [组件上的v-model](vue/3.v-model-component.md)
 	* [用eventBus传递数据](vue/4.eventBus.md)
 	* [二次开发iview](vue/6.iview-component.md)
+	* [在父组件中直接调用子组件的方法](vue/7.call_son_components_method.md)
+	* [props&data&computed](vue/8.props_data_computed.md)
