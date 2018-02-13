@@ -5,10 +5,11 @@
     <title>Hello World</title>
     <!-- <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
     <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script> -->
-    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+
 
     <script src="https://fb.me/react-15.2.0.js"></script>
-        <script src="https://fb.me/react-dom-15.2.0.js"></script>
+    <script src="https://fb.me/react-dom-15.2.0.js"></script>
+    <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
   </head>
   <body>
     <div id="root"></div>
@@ -35,14 +36,57 @@
         <p>{props.content}</p>
       </div>
     }
-    function Item(props){
+    // Item(props){
+    //   // console.dir(props)
+    //   return <div>
+    //     <Author name={props.author.name} sex={props.author.sex} />,
+    //     <Content title={props.title} content={props.content} />
+    //     <Clock/>
+    //   </div>
+    // }
+      var Item = React.createClass({
       // console.dir(props)
-      return <div>
-        <Author name={props.author.name} sex={props.author.sex} />,
-        <Content title={props.title} content={props.content} />
-        <Clock/>
-      </div>
-    }
+      render(){
+        return (<div>
+          <Author name={this.props.author.name} sex={this.props.author.sex} />,
+          <Content title={this.props.title} content={this.props.content} />
+          <Clock/>
+        </div>)
+      }
+
+    })
+
+    var ItemList = React.createClass({
+      getInitialState(){
+        return {
+            list: [{
+              title: 'amazying',
+              content: '地震来了',
+              author: {
+                name: '小凡',
+                sex: 'm'
+              }
+            },{
+              title: 'amazying1',
+              content: '地震来了1',
+              author: {
+                name: '小凡1',
+                sex: 'm1'
+              }
+            }]
+        }
+      },
+      render () {
+        return (<div>
+          {
+            this.state.list.map(item => {
+              console.log(item)
+              return <Item author={item.author} title={item.title} content={item.content} />
+            })
+          }
+          </div>)
+      }
+    })
 
     var  Clock = React.createClass({
       // constructor(props){
@@ -71,8 +115,10 @@
         </div>
       }
     })
+
+
     ReactDOM.render(
-      <Item author = {comments.author} title={comments.title} content={comments.content} />,
+      <ItemList />,
       document.getElementById('root')
     );
 
