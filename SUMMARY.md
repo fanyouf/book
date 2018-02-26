@@ -15,4 +15,4 @@
 	* [在父组件中直接调用子组件的方法](vue/7.call_son_components_methods.md)
 	* [props&data&computed](vue/8.props_data_computed.md)
     * [前端假数据和后端真接口的无缝切换](vue/9.mock1.md)
-    * [vue-cli axios 跨域](vue/10.cross-domain.md)
+    * [vue-cli axios 跨 域](vue/10.cross-domain.md)
